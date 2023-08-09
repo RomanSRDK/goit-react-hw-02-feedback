@@ -28,9 +28,7 @@ export default class App extends Component {
 
  // процент положительных отзывов
  countPositiveFeedbackPercentage =() => {
-  const {Good, Neutral, Bad} = this.state;
-  const total = Good + Neutral + Bad;
-  return `${Math.round(((Good + Neutral) / total) * 100) || 0}`;
+  return `${Math.round((this.state.Good / this.countTotalFeedback()) * 100) || 0}`;
 };
 
   render() {
